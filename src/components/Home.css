@@ -39,3 +39,13 @@
 .refresh img{
     width: 3rem;
 }
+.coin-container{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.loadMessage{
+    color: white;
+}

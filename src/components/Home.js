@@ -6,16 +6,19 @@ import Token from './Token'
 const Home = () => {
     const [coins,setCoins] = useState([]);
     const [coinName,setCoinName] = useState("");
+    const [load, setLoad] = useState(false);
 
     useEffect(()=>{
        getData();
     },[])
     const getData = () =>{
+      setLoad(true);
         Axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false')
         .then((response)=>{
-            console.log(response)
-            console.log(response.data)
-            setCoins(response.data);
+          console.log(response)
+          console.log(response.data)
+          setCoins(response.data);
+          setLoad(false);
         });
     }
     const filterData = coins.filter((val) => {
@@ -40,6 +43,7 @@ const Home = () => {
         </div>
         </div>
         <div className="coin-container">
+          {load && <div className='loadMessage'>Loading...</div>}
         {filterData.map((coins) => {
           return (
             <Token

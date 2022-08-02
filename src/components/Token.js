@@ -10,10 +10,10 @@ const Token = ({
     priceChange
 }) => {
   return (
-    <div className='container'>
+    <div className='coinContainer'>
       <div className="coinBox">
         <h1 className='coinName'>{coinName}</h1>
-        <img src={image} />
+        <img className="icon" src={image} />
         <p className='coinSymbol'>{coinSymbol}</p>
         <p className='price'>{price}</p>
         <p className='marketCap'>{marketCap}</p>
