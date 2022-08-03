@@ -3,6 +3,7 @@ import Axios from 'axios'
 import '../components/Home.css'
 import refresh from "../components/images/refresh.png"
 import Token from './Token'
+import loading from "../components/images/loading.gif"
 const Home = () => {
     const [coins,setCoins] = useState([]);
     const [coinName,setCoinName] = useState("");
@@ -43,7 +44,7 @@ const Home = () => {
         </div>
         </div>
         <div className="coin-container">
-          {load && <div className='loadMessage'>Loading...</div>}
+          {load && <div className='loadMessage'><img src={loading} alt="loading.." /></div>}
         {filterData.map((coins) => {
           return (
             <Token
