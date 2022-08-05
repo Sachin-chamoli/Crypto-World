@@ -7,20 +7,22 @@ const Token = ({
     coinSymbol,
     price,
     marketCap,
-    priceChange
+    priceChange,
+    rank
 }) => {
   return (
     <div className='coinContainer'>
       <div className="coinBox">
         <h1 className='coinName'>{coinName}</h1>
         <img className="icon" src={image} />
-        <p className='coinSymbol'>{coinSymbol}</p>
-        <p className='price'>{price}</p>
-        <p className='marketCap'>{marketCap}</p>
+        <p className='rank'>Market Rank : {rank}</p>
+        <p className='coinSymbol'>Symbol : {coinSymbol}</p>
+        <p className='price'>Price : {price}</p>
+        <p className='marketCap'>Marketcap : {marketCap}</p>
         {priceChange < 0 ? (
-            <p className='priceChange loss'>{priceChange}</p>
+            <p className='priceChange '>Price Change in 24h : <span className='loss'>     {priceChange.toFixed(2)}%</span></p>
         ) : (
-            <p className='priceChange gain'>{priceChange}</p>
+            <p className='priceChange'>Price Change in 24h : <span className='gain'> {priceChange.toFixed(2)}%</span></p>
         )}
 
       </div>

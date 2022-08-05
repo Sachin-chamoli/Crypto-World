@@ -14,7 +14,7 @@ const Home = () => {
     },[])
     const getData = () =>{
       setLoad(true);
-        Axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=false')
+        Axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=250&page=1&sparkline=false')
         .then((response)=>{
           console.log(response)
           console.log(response.data)
@@ -49,6 +49,7 @@ const Home = () => {
           return (
             <Token
               id={coins.id}
+              rank= {coins.market_cap_rank}
               image={coins.image}
               coinName={coins.name}
               coinSymbol={coins.symbol}
