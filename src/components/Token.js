@@ -17,8 +17,8 @@ const Token = ({
         <img className="icon" src={image} />
         <p className='rank'>Market Rank : {rank}</p>
         <p className='coinSymbol'>Symbol : {coinSymbol}</p>
-        <p className='price'>Price : {price}</p>
-        <p className='marketCap'>Marketcap : {marketCap}</p>
+        <p className='price'>Price : ₹  {price}</p>
+        <p className='marketCap'>Marketcap : ₹  {marketCap}</p>
         {priceChange < 0 ? (
             <p className='priceChange '>Price Change in 24h : <span className='loss'>     {priceChange.toFixed(2)}%</span></p>
         ) : (
