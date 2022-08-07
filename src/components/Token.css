@@ -4,9 +4,9 @@
     width: 20rem;
     height: 25rem;
     text-align: center;
-    background-color: rgb(55, 9, 97);
     transition: all 0.2s ease-in-out;
-    box-shadow: 0px 0px 5px 3px rgb(255, 255, 255);
+    background: linear-gradient(rgb(7, 2, 77),rgb(60, 2, 53));
+    box-shadow: 0 0 10px rgb(223, 226, 222);
     border-radius: 1rem;
 }
 .coinContainer:hover{
@@ -14,11 +14,54 @@
 }
 .icon{
     width: 6rem;
+    animation: rotation 5s infinite linear;
 }
+@keyframes rotation {
+   
+    25% {
+      transform: rotateY(90deg);
+    }
+    50%{
+        transform: rotateY(180deg);
+    }
+    75%{
+        transform: rotateY(270deg);
+    }
+    100%{
+        transform: rotateY(359deg);
+    }
+  }
 .loss {
     color: #f00606;
+    font-weight: bold;
   }
   
   .gain {
     color: #11d811;
+    font-weight: bold;
+  }
+
+  .coinName{
+    color: rgb(240, 240, 5);
+  }
+  @media screen and (max-width: 480px) {
+    .coinContainer{
+        color: white;
+        margin: 1.2rem 2rem;
+        width: 15rem;
+        height: 19rem;
+      
+    }
+    .coinContainer:hover{
+        transform: none;
+    }
+    .icon{
+        width: 4rem;
+    }
+    .coinBox{
+        font-size: 0.9rem;
+    }
+    .coinName{
+        font-size: 1.4rem;
+      }
   }
